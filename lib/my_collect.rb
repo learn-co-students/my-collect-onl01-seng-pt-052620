@@ -1,9 +1,12 @@
-def my_collect(students)
-  students = ["Tim Jones", "Tom Smith", "Jim Campagno"]
-  empty = []
-  counter = 0
-  students.split(' ').first do |x|
-    x
+def my_collect(array)
+  
+  i = 0
+  
+  collection = []
+  while i < array.length
+    collection[i] = yield array[i]
+    i += 1
   end
-  empty.push(students)
+ 
+  return collection
 end
